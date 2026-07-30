@@ -71,6 +71,8 @@ Primer's own value, which falls under AA on card surfaces.
 
 ## Licence
 
-UNLICENSED. This is published so Process Link apps can install it from a single
-place, not as an invitation to reuse. Pick a real licence before treating it as
-open source.
+MIT. Use it, change it, ship it, including commercially. Keep the copyright
+notice.
+
+Note that a licence covers copyright, not trademark. MIT grants you the CSS. It
+does not grant the Process Link name, logo or any implication of endorsement.
