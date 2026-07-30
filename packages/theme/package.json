@@ -1,0 +1,32 @@
+{
+  "name": "@processlink/theme",
+  "version": "0.1.0",
+  "description": "Process Link design tokens: colour, typography, radius, shadow and elevation for light and dark, as plain CSS.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/process-link/platform-ui.git",
+    "directory": "packages/theme"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./theme.css",
+    "./theme.css": "./theme.css"
+  },
+  "files": [
+    "theme.css",
+    "README.md"
+  ],
+  "keywords": [
+    "design-tokens",
+    "css",
+    "tailwind",
+    "theme"
+  ],
+  "sideEffects": [
+    "*.css"
+  ]
+}
