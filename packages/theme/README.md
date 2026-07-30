@@ -1,20 +1,14 @@
 # @processlink/theme
 
-The Process Link design tokens, as plain CSS. One source of truth for colour,
-typography, radius, shadow and elevation across every Process Link app.
-
-No JavaScript, no framework, no dependencies. A Next app can use it, so can a
-static page or a stylesheet for a generated document.
-
-## Install
+Design tokens for Process Link apps. Plain CSS, no dependencies.
 
 ```bash
 npm install @processlink/theme
 ```
 
-## Use
+## Usage
 
-Import it after Tailwind, in your `globals.css`:
+In `globals.css`, after Tailwind:
 
 ```css
 @import "tailwindcss";
@@ -25,54 +19,39 @@ Import it after Tailwind, in your `globals.css`:
 @import "@processlink/theme";
 ```
 
-Order matters. Tailwind must be imported first, because the `@theme` block
-inside this package resolves against it.
+Tailwind must come first. The `@theme` block resolves against it.
 
 Your app keeps its own `@layer base`, keyframes and anything app-specific.
 
 ## Fonts
 
-The theme maps Tailwind's font utilities onto three CSS variables. Your app
-declares the actual faces, so it controls loading and subsetting:
+Utilities map to CSS variables. The app declares the faces:
 
-| Variable | Used by | Portal uses |
-| --- | --- | --- |
-| `--font-geist-sans` | `font-sans` | Geist |
-| `--font-geist-mono` | `font-mono` | Geist Mono |
-| `--font-hanken` | `font-heading` | Hanken Grotesk |
+| Variable | Utility |
+| --- | --- |
+| `--font-geist-sans` | `font-sans` |
+| `--font-geist-mono` | `font-mono` |
+| `--font-hanken` | `font-heading` |
 
 ```tsx
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
-// ...then put the variables on <body>
+// put .variable on <body>
 ```
 
-Miss this step and the utilities silently fall back to the system stacks. That
-is not hypothetical: Portal shipped for months downloading Inter and never
-applying it, because nothing mapped it onto `--font-sans`.
+Skip this and the utilities fall back to the system stacks silently.
 
-## What is in here
+## Contents
 
-- Brand scale, `--brand-50` through `--brand-900`, orange as an accent only
-- Light palette: warm neutral, background a hair off white so white cards lift
-- Dark palette: GitHub Dark Dimmed, deliberately not near-black, with elevation
-  running the correct way (surfaces get lighter as they rise)
-- Soft multi-stop shadow scale
-- Radius scale on a multiplicative ramp
-- `prefers-reduced-motion` support, with loading indicators slowed rather than
-  frozen so the UI does not read as hung
-- A thin, theme-aware scrollbar utility, `.scrollbar-thin`
+- Brand scale `--brand-50` to `--brand-900`
+- Light palette, warm neutral
+- Dark palette, GitHub Dark Dimmed, elevation lightens as surfaces rise
+- Shadow and radius scales
+- `prefers-reduced-motion`, spinners slowed rather than stopped
+- `.scrollbar-thin`
 
-## Accessibility
-
-Contrast is measured, not assumed. Body text is 7.6:1 on the dark page and
-18.9:1 in light. Form control borders clear the 3:1 that WCAG 1.4.11 asks of UI
-component boundaries in both modes. `--muted-foreground` is lifted above
-Primer's own value, which falls under AA on card surfaces.
+Contrast targets AA: 7.6:1 body on dark, 18.9:1 on light, form borders above
+3:1 in both.
 
 ## Licence
 
-MIT. Use it, change it, ship it, including commercially. Keep the copyright
-notice.
-
-Note that a licence covers copyright, not trademark. MIT grants you the CSS. It
-does not grant the Process Link name, logo or any implication of endorsement.
+MIT. Covers the CSS only, not the Process Link name or logo.
