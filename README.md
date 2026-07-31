@@ -17,6 +17,37 @@ npm publish
 
 Consumers: `npm install @processlink/theme@latest`.
 
+## Adopting in an app
+
+```bash
+npm install @processlink/theme
+```
+
+`globals.css`: replace the local token block with `@import "@processlink/theme";`
+after the Tailwind imports. Set the three font variables in the root layout.
+
+shift-link, dossier and files each invented their own names for tokens the
+theme already has. Delete the local definitions and rename usages:
+
+| Local | Theme |
+| --- | --- |
+| `--surface`, `--color-surface` | `--background` |
+| `--surface-raised`, `--surface-elevated`, `--color-surface-elevated` | `--card` |
+| `--surface-strong` | `--primary` |
+| `--text-primary` | `--foreground` |
+| `--text-secondary` | `--muted-foreground` |
+| `--border-default` | `--border` |
+
+Not covered, keep locally or drop: `--text-tertiary` and `--border-subtle`
+(files only), the custom spacing scale (dossier), `--shadow-soft` /
+`--shadow-outline` and the shimmer/slide keyframes (shift-link).
+
+connect, help-desk and grafset define no competing tokens, so those are a
+straight install.
+
+Verify by diffing the compiled stylesheet before and after. It should not
+change.
+
 ## ui-kit
 
 Not packaged yet. The header components resolve app code through the `@/`

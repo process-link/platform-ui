@@ -163,9 +163,9 @@
   /* Wired to the next/font variables set on <body> in layout.tsx. Without
      this mapping the font utilities fall back to Tailwind's default stacks,
      which is what previously happened: Inter was loaded but never applied. */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-hanken);
+  --font-sans: var(--pl-font-sans);
+  --font-mono: var(--pl-font-mono);
+  --font-heading: var(--pl-font-heading);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

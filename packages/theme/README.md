@@ -29,12 +29,12 @@ Utilities map to CSS variables. The app declares the faces:
 
 | Variable | Utility |
 | --- | --- |
-| `--font-geist-sans` | `font-sans` |
-| `--font-geist-mono` | `font-mono` |
-| `--font-hanken` | `font-heading` |
+| `--pl-font-sans` | `font-sans` |
+| `--pl-font-mono` | `font-mono` |
+| `--pl-font-heading` | `font-heading` |
 
 ```tsx
-const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistSans = Geist({ subsets: ["latin"], variable: "--pl-font-sans" });
 // put .variable on <body>
 ```
 
